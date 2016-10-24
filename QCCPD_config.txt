@@ -1,0 +1,30 @@
+# Comments
+
+# Input file and name, output path
+[files]
+	input_path='/home/imchugh/Ozflux/Sites/Whroo/Data/Processed/all/'
+	#input_path='/home/imchugh/Ozflux/Sites/Whroo/Data/Processed/2012/'
+	input_file='Whroo_2011_to_2014_L3_stor.nc'
+	output_path='/home/imchugh/Documents'
+
+# Naming convention in input file
+[variables]
+	[[data]]
+		carbon_flux='Fc'
+		temperature='Ta'
+		friction_velocity='ustar'
+		solar_radiation='Fsd'
+	[[QC]]
+		carbon_flux_QCFlag='Fc_QCFlag'
+		temperature_QCFlag='Ta_QCFlag'
+		friction_velocity_QCFlag='ustar_QCFlag'
+		solar_radiation_QCFlag='Fsd_QCFlag'
+
+# User settings
+[options]
+	radiation_threshold='10'
+	nan_value='-9999'
+	num_bootstraps='1000'
+	QC_accept_codes='[0,10]'
+	output_results='True'
+	output_plots='True'

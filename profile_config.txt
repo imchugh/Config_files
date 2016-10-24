@@ -1,0 +1,45 @@
+# Comments
+# Under the profile and met items 'freq_mins', specify the measurement frequency of the 
+# The rules:
+#   - temperature data must be supplied for: i) the same number of levels as CO2; ii) a single level,  or;  
+#     iii) no levels (i.e. temperature data is absent, in which case default 20C is used); 
+#     nothing else will work!
+#   - same goes for pressure data!
+#   - level (i.e. measurement height) designations must be either contained in the variable names or specified 
+#     under options below
+#   - the 'bin_size' config item under 'options' refers to the number of observations, so if you have a 
+#     2-minute measurement interval, a bin size of 2 means the data will be averaged across 2 intervals
+#   - the 'lag' config item under 'options' allows the data to be shifted in time to allow for time delays
+#     in the system
+#   - if the required meteorological variables (temperature and pressure) are recorded at same frequency as 
+#     profile data, include them in the profile sheet (i.e. move 'temp_vars' and 'p_vars' into the profile sheet)
+#     and comment out the met sheet and all of its configs
+
+
+# Input file and name, output path
+[files]
+	input_path='/home/imchugh/Processing/Whroo/Profile data'
+	input_file='profile_data.xlsx'
+	output_path='/home/imchugh/Processing/Whroo/Profile data'
+
+# Naming convention in input file
+[variables]
+    [[profile]]
+        sheet_name='Profile_data'
+        C_vars='[Cc_0.5m,Cc_2m,Cc_4m,Cc_8m,Cc_16m,Cc_32m]'
+        DateTime_name='TIMESTAMP'
+        freq_mins='2'
+    [[met]]
+        sheet_name='EC_Met_data'
+        T_vars='[Ta_0.5m,Ta_2m,Ta_4m,Ta_8m,Ta_16m,Ta_32m]'
+        p_vars='[ps]'
+        DateTime_name='TIMESTAMP'
+        freq_mins='30'
+
+# User settings
+[options]
+	levels='[0.5,2,4,8,16,32]'
+    output_freq_mins='30'
+    lag='0'
+    bin_size='2'
+    output_plots='True'

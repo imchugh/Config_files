@@ -1,0 +1,14 @@
+# Random error config file
+
+[options]
+    measurement_interval = 30
+    pos_averaging_bins = 10
+    neg_averaging_bins = 10
+    radiation_difference_threshold = 35
+    temperature_difference_threshold = 3
+    windspeed_difference_threshold = 1
+    noct_threshold = 5
+    num_trials = 10000
+    nan_value = -9999
+    mean_flux_series = Fc_model
+    propagation_series = Fc_model

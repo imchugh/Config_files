@@ -1,0 +1,37 @@
+# Comments
+
+# Specify input file path and file
+[files]
+    input_path = /home/imchugh/Ozflux/Sites/Whroo/Data/Processed/all
+#               /media/Data/Dropbox/Data/Site data processing/Whroo/Advanced_v12a
+    input_file = Whroo_2011_to_2014_L6.nc
+#               Advanced_processed_data_Whroo_v12a.df
+    output_path = /home/imchugh/Documents
+
+# Names used in input dataset for the following variables
+[variables]
+    carbon_flux = Fc
+    temperature = Ta
+    solar_radiation = Fsd
+    vapour_pressure_deficit = VPD
+    friction_velocity = ustar
+	
+# User settings
+[configs]
+	minimum_temperature_spread = 5
+	step_size_days = 5
+	window_size_days = 15
+	minimum_pct_annual = 20
+	minimum_pct_noct_window = 20
+	minimum_pct_day_window = 50
+	output_plots = False
+    output_results = True
+    measurement_interval = 0.5
+    do_nocturnal_respiration = True
+    do_daytime_respiration = True
+    do_daytime_light_response = True
+    [[ustar_threshold]]
+        2011 = 0.42
+        2012 = 0.42
+        2013 = 0.42
+        2014 = 0.42

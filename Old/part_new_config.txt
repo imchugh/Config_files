@@ -1,0 +1,37 @@
+# Comments
+# 'infile_type' choices are 'OzFluxQC' or 'other'
+
+# Input file and name, output path
+[files]
+	input_path = '/home/imchugh/Analysis/Whroo/Data/Flux_and_met'
+	input_file = 'synthetic_NEE_with_error.npz'
+	output_path = '/home/imchugh/Documents'
+
+# Naming convention in input file
+[variables]
+	[[data]]
+		carbon_flux = 'NEE_err'
+		temperature = 'Ta'
+		solar_radiation = 'PAR'
+		vapour_pressure_deficit = 'VPD'
+        date_time = 'date_time'
+#	[[QC]]
+#		carbon_flux_QCFlag = 'Fc_QCFlag'
+#		temperature_QCFlag = 'Ta_QCFlag'
+#		solar_radiation_QCFlag = 'Fsd_QCFlag'
+#		vapour_pressure_deficit_QCFlag = 'VPD_QCFlag'
+		
+# User settings
+[options]
+	radiation_threshold = 10
+	nan_value = -9999
+	QC_accept_codes = '[0,10]'
+	minimum_temperature_spread = 5
+	step_size_days = 5
+	window_size_days = 15
+	minimum_pct_annual = 30
+	minimum_pct_noct_window = 20
+	minimum_pct_day_window = 50
+	output_results = True
+	output_plots = False
+    msmt_interval_hrs = 0.5

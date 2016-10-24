@@ -1,0 +1,53 @@
+# Uncertainty config file
+
+[files]
+    data_path = /media/Data/Dropbox/Data/Site data processing/HowardSprings/Advanced_v12a
+    data_file = Advanced_processed_data_HowardSprings_v12a.df
+
+[variables]
+    carbon_flux = Fc
+    modelled_carbon_flux = Fc_NN
+    solar_radiation = Fsd_Con
+    temperature = Ta_Con
+    wind_speed = Ws_CSAT_Con
+    friction_velocity = ustar
+
+[global_configs]
+    num_trials = 10000
+    noct_threshold = 5
+    output_path = /home/imchugh/Documents
+    [[ustar_threshold]]
+        2001 = 0.25
+        2002 = 0.25
+        2003 = 0.25
+        2004 = 0.2 
+        2005 = 0.23
+        2006 = 0.25
+        2007 = 0.23
+        2008 = 0.25
+        2009 = 0.23
+        2010 = 0.26
+        2011 = 0.27
+        2012 = 0.24
+        2013 = 0.26
+        2014 = 0.29
+        2015 = 0.25
+
+[random_error_configs]
+    pos_averaging_bins = 10
+    neg_averaging_bins = 10
+    radiation_difference_threshold = 35
+    temperature_difference_threshold = 3
+    windspeed_difference_threshold = 1
+    mean_series = Fc_model
+    propagation_series = Fc_model
+
+[model_error_configs]
+    minimum_temperature_spread = 5
+    step_size_days = 5
+    window_size_days = 15
+    min_pct_annual = 30
+    min_pct_noct_window = 20
+    min_pct_day_window = 50
+    output_plots = False
+

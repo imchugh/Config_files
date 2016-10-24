@@ -1,0 +1,42 @@
+# Comments
+# 'infile_type' choices are 'OzFluxQC' or 'other'
+
+# Input file and name, output path
+[files]
+	input_path='/home/imchugh/Processing/High country'
+	input_file='Dargo_half_hour.df'
+	output_path='/home/imchugh/Documents'
+
+# Naming convention in input file
+[variables]
+	[[data]]
+		carbon_flux='C Flux'
+		temperature='Ts'
+		solar_radiation='PARin'
+		vapour_pressure_deficit='VPD'
+#	[[QC]]
+#		carbon_flux_QCFlag='Fc_QCFlag'
+#		temperature_QCFlag='Ta_QCFlag'
+#		solar_radiation_QCFlag='Fsd_QCFlag'
+#		vapour_pressure_deficit_QCFlag='VPD_QCFlag'
+		
+# User settings
+[options]
+	radiation_threshold=10
+	nan_value=-9999
+	QC_accept_codes='[0,10]'
+	minimum_temperature_spread=5
+	time_step_night=5
+	time_step_day=5
+	window_size_night=10
+	window_size_day=10
+	reference_temperature=10
+	minimum_pct_annual_data=30
+	minimum_num_window_data=50
+	output_results='False'
+	output_plots='False'
+    VPD_threshold=1
+    flux_frequency=30
+    infile_type='Other'
+    convert_to_PAR='False'
+    convert_to_umol='True'

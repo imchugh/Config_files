@@ -1,0 +1,21 @@
+[a]
+    this_1 = 5
+    this_2 = False
+
+[random_error_configs]
+    [[variables]]
+        carbon_flux = Fc
+        modelled_carbon_flux = Fc_SOLO
+        carbon_storage = Fc_storage
+        temperature = Ta
+        solar_radiation = Fsd
+        friction_velocity = ustar
+        wind_speed = Ws_CSAT
+    [[options]]
+        pos_averaging_bins = 10
+        neg_averaging_bins = 10
+        radiation_difference_threshold = 35
+        temperature_difference_threshold = 3
+        windspeed_difference_threshold = 1
+        mean_series = Fc_model
+        propagation_series = Fc_model

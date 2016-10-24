@@ -1,0 +1,27 @@
+# Random error config file
+
+[files]
+    data_file_in = '/home/imchugh/Ozflux/Sites/Whroo/Data/Processed/all/Whroo_2011_to_2014_L3.nc'
+    results_out_path = '/home/imchugh/Documents/'
+
+[variables]
+    Fc = 'Fc'
+    Fsd = 'Fsd'
+    Ta = 'Ta'
+    ws = 'Ws_CSAT'
+    ustar = 'ustar'
+    propagation_series = 'Fc'
+    error_generation_series = 'Fc'
+
+[options]
+    measurement_interval = '30'
+    averaging_bins = '100'
+    radiation_difference_threshold = '35'
+    temperature_difference_threshold = '3'
+    windspeed_difference_threshold = '1'
+    noct_threshold = '5'
+    propagate_error = 'False'
+    num_trials = '10000'
+    ustar_threshold = '0'
+    error_generator = 'False'
+    nan_value = '-9999'

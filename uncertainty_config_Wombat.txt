@@ -1,0 +1,41 @@
+# Uncertainty config file
+
+[files]
+    data_path = /home/imchugh/Ozflux/Sites/Whroo/Data/Processed/all
+    data_file = Whroo_2011_to_2014_L5.nc
+
+[variables]
+    carbon_flux = Fc
+    modelled_carbon_flux = Fc_SOLO
+    solar_radiation = Fsd
+    temperature = Ta
+    wind_speed = Ws_CSAT
+    friction_velocity = ustar
+
+[global_configs]
+    num_trials = 10000
+    noct_threshold = 5
+    output_path = /home/imchugh/Documents
+    [[ustar_threshold]]
+        2011 = 0.42
+        2012 = 0.42
+        2013 = 0.42
+        2014 = 0.42 
+
+[random_error_configs]
+    pos_averaging_bins = 10
+    neg_averaging_bins = 10
+    radiation_difference_threshold = 35
+    temperature_difference_threshold = 3
+    windspeed_difference_threshold = 1
+    mean_series = Fc_model
+    propagation_series = Fc_model
+
+[model_error_configs]
+    minimum_temperature_spread = 5
+    step_size_days = 5
+    window_size_days = 15
+    min_pct_annual = 30
+    min_pct_noct_window = 20
+    min_pct_day_window = 50
+    output_plots = True

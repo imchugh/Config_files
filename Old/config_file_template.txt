@@ -1,0 +1,44 @@
+# Comments
+
+# Input file and name, output path
+[file_IO]
+	input_path='/home/imchugh/Processing/Whroo/EC data'
+	input_file='Whroo_2012_to_2013_L5.nc'
+	output_path='/home/imchugh/Documents'
+
+# Naming convention in input file
+[variable_names]
+	[[ustar_+error]]
+		carbon_flux='Fc'
+		temperature='Ta'
+		friction_velocity='ustar'
+		solar_radiation='Fsd'
+	[[random_error]]
+		carbon_flux='Fc'
+		temperature='Ta'
+		wind_speed='Ws_CSAT'
+		solar_radiation='Fsd'
+
+# User settings
+[user]
+	[[global]]
+		flux_frequency=30
+		radiation_threshold=10
+		num_MonteCarlo_trials=1000
+		nan_value=-9999
+	[[ustar_+error]]
+		num_bootstraps=1
+	[[random_error]]
+		temperature_difference_threshold=3
+		windspeed_difference_threshold=1
+		radiation_difference_threshold=36
+		averaging_bins=40
+	
+# Processing options - calculate errors and/or propagate to estimate uncertainty
+[processing_options]
+	[[ustar_+error]]
+		process=False
+		propagate=False
+	[[random_error]]
+		process=True
+		propagate=True

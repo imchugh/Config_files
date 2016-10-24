@@ -1,0 +1,73 @@
+# Master configuration file
+
+#-------------------------------------------------------------------
+# General settings
+#-------------------------------------------------------------------
+
+[files]
+    input_path = /home/imchugh/Ozflux/Sites/Whroo/Data/Processed/all
+    input_file = Whroo_2011_to_2014_L6.nc
+    output_path = /home/imchugh/Documents
+
+[variables]
+    carbon_flux = Fc
+    carbon_storage = Fc_storage
+    temperature = Ta
+    solar_radiation = Fsd
+    vapour_pressure_deficit = VPD
+    friction_velocity = ustar
+    wind_speed = Ws_CSAT
+
+[global_configs]
+    ustar_threshold = 0.42
+
+#-------------------------------------------------------------------
+# Algorithm-specific settings
+#-------------------------------------------------------------------
+
+[respiration_configs]
+	step_size_days = 5
+	window_size_days = 15
+	minimum_pct_annual = 20
+	minimum_pct_window = 20
+    output_folder = Respiration
+    output_fit_plots = False
+
+[light_response_configs]
+    step_size_days = 5
+	window_size_days = 15
+	minimum_pct_window = 50
+    use_nocturnal_rb = True
+    output_folder = Light_response
+    output_fit_plots = False
+
+[random_error_configs]
+    [[variables]]
+        carbon_flux = Fc
+        carbon_storage = Fc_storage
+        temperature = Ta
+        solar_radiation = Fsd
+        friction_velocity = ustar
+        wind_speed = Ws_CSAT
+    [[options]]
+        pos_averaging_bins = 10
+        neg_averaging_bins = 10
+        radiation_difference_threshold = 35
+        temperature_difference_threshold = 3
+        windspeed_difference_threshold = 1
+        mean_series = Fc_model
+        propagation_series = Fc_model
+
+[model_error_configs]
+    minimum_temperature_spread = 5
+    step_size_days = 5
+    window_size_days = 15
+    min_pct_annual = 30
+    min_pct_noct_window = 20
+    min_pct_day_window = 50
+    output_plots = True
+
+[partitioning_uncertainty]
+    num_trials = 5
+    gaps = True
+    gap_type = obs

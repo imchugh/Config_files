@@ -1,0 +1,106 @@
+# Master configuration file
+
+#-------------------------------------------------------------------
+# General settings
+#-------------------------------------------------------------------
+
+[global_configs]
+    [[files]]
+        input_path = /home/imchugh/Ozflux/Sites/Whroo/Data/Processed/all
+        input_file = Whroo_2011_to_2014_L4.nc
+        output_path = /home/imchugh/Documents
+
+    [[options]]
+        noct_threshold = 5
+        use_storage = True
+        unify_flux_storage_cases = True
+        ustar_filter_day = False
+        [[[ustar_threshold]]]
+            2011 = 0.31 # Lower: 0.30, central: 0.40, upper: 0.58 - note this is mean of all other years
+            2012 = 0.30 # Lower: 0.29, central: 0.39, upper: 0.52
+            2013 = 0.32 # Lower: 0.32, central: 0.40, upper: 0.61
+            2014 = 0.32 # Lower: 0.30, central: 0.42, upper: 0.61
+        [[[ustar_uncertainty]]]
+            2011 = 0.18
+            2012 = 0.13
+            2013 = 0.21
+            2014 = 0.19
+
+#-------------------------------------------------------------------
+# Algorithm-specific settings
+#-------------------------------------------------------------------
+
+[respiration_configs]
+    [[variables]]
+        carbon_flux = Fc
+        carbon_storage = Fc_storage_obs
+        temperature = Ta
+        soil_moisture = Sws
+        solar_radiation = Fsd
+        friction_velocity = ustar
+#        generic = Fc_storage_obs
+    [[options]]
+	    step_size_days = 5
+	    window_size_days = 15
+	    minimum_pct_annual = 20
+	    minimum_pct_window = 20
+        output_folder = Respiration
+        output_fit_plots = False
+
+[photosynthesis_configs]
+    [[variables]]
+        carbon_flux = Fc
+        carbon_storage = Fc_storage_obs
+        temperature = Ta
+        solar_radiation = Fsd
+        vapour_pressure_deficit = VPD
+        friction_velocity = ustar
+    [[options]]    
+        step_size_days = 5
+	    window_size_days = 15
+	    minimum_pct_window = 20
+        use_nocturnal_rb = True
+        output_folder = Light_response
+        output_fit_plots = False
+
+[random_error_configs]
+    [[variables]]
+        carbon_flux = Fc
+#        modelled_carbon_flux = Fc_SOLO
+        carbon_storage = Fc_storage
+        temperature = Ta
+        solar_radiation = Fsd
+        friction_velocity = ustar
+        wind_speed = Ws_CSAT
+    [[options]]
+        pos_averaging_bins = 10
+        neg_averaging_bins = 10
+        radiation_difference_threshold = 35
+        temperature_difference_threshold = 3
+        windspeed_difference_threshold = 1
+        mean_series = NEE_model
+        propagation_series = NEE_model
+
+[model_error_configs]
+    [[variables]]
+        carbon_flux = Fc
+#        modelled_carbon_flux = Fc_SOLO
+        carbon_storage = Fc_storage
+        temperature = Ta
+        solar_radiation = Fsd
+        friction_velocity = ustar
+        wind_speed = Ws_CSAT
+    [[options]]
+
+[NEE_uncertainty_configs]
+    num_trials = 500
+    do_random_uncertainty = True
+    do_model_uncertainty = True
+    do_ustar_uncertainty = True
+    NEE_model = LT # Options are 'ANN' and 'LT'
+    save_results = True
+
+[partitioning_uncertainty]
+    num_trials = 5
+    gaps = True
+    gap_type = obs
