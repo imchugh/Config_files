@@ -42,7 +42,7 @@
     [[options]]
 	    step_size_days = 5
 	    window_size_days = 15
-	    minimum_pct_annual = 20
+	    minimum_pct_annual = 50
 	    minimum_pct_window = 20
         output_folder = Respiration
         output_fit_plots = False
@@ -93,7 +93,7 @@
     [[options]]
 
 [NEE_uncertainty_configs]
-    num_trials = 500
+    num_trials = 10
     do_random_uncertainty = True
     do_model_uncertainty = True
     do_ustar_uncertainty = True

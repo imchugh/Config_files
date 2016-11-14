@@ -9,7 +9,7 @@
 	#input_path='/home/imchugh/ownCloud/Shared/OzFlux/Sites/WombatStateForest/Data/Tower/site_pi/f_Ian/L3_noProfileSc_f_2012'
     input_path='/home/imchugh/Downloads'
 	input_file='WombatStateForest_L3.nc'
-        output_path = /home/imchugh/Documents
+    output_path = /home/imchugh/Documents
 
     [[options]]
         noct_threshold = 5
