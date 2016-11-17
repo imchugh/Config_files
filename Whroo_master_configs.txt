@@ -67,7 +67,7 @@
     [[variables]]
         carbon_flux = Fc
 #        modelled_carbon_flux = Fc_SOLO
-        carbon_storage = Fc_storage
+        carbon_storage = Fc_storage_obs
         temperature = Ta
         solar_radiation = Fsd
         friction_velocity = ustar
