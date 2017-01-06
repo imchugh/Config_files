@@ -12,9 +12,9 @@
 
     [[options]]
         noct_threshold = 5
-        use_storage = True
+        use_storage = False
         unify_flux_storage_cases = True
-        ustar_filter_day = False
+        ustar_filter_day = True
         [[[ustar_threshold]]]
             2011 = 0.31 # Lower: 0.30, central: 0.40, upper: 0.58 - note this is mean of all other years
             2012 = 0.30 # Lower: 0.29, central: 0.39, upper: 0.52
@@ -36,13 +36,14 @@
         carbon_storage = Fc_storage_obs
         temperature = Ta
         soil_moisture = Sws
+        soil_temperature = Ts
         solar_radiation = Fsd
         friction_velocity = ustar
         generic = Fc_storage_obs
     [[options]]
 	    step_size_days = 5
 	    window_size_days = 15
-	    minimum_pct_annual = 50
+	    minimum_pct_annual = 20
 	    minimum_pct_window = 20
         output_folder = Respiration
         output_fit_plots = False
@@ -67,7 +68,7 @@
     [[variables]]
         carbon_flux = Fc
 #        modelled_carbon_flux = Fc_SOLO
-        carbon_storage = Fc_storage
+        carbon_storage = Fc_storage_obs
         temperature = Ta
         solar_radiation = Fsd
         friction_velocity = ustar
@@ -85,7 +86,7 @@
     [[variables]]
         carbon_flux = Fc
 #        modelled_carbon_flux = Fc_SOLO
-        carbon_storage = Fc_storage
+        carbon_storage = Fc_storage_obs
         temperature = Ta
         solar_radiation = Fsd
         friction_velocity = ustar
@@ -93,10 +94,10 @@
     [[options]]
 
 [NEE_uncertainty_configs]
-    num_trials = 10
+    num_trials = 1000
     do_random_uncertainty = True
     do_model_uncertainty = True
-    do_ustar_uncertainty = True
+    do_ustar_uncertainty = False
     NEE_model = LT # Options are 'ANN' and 'LT'
     save_results = True
 

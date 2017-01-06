@@ -4,7 +4,7 @@
 [files]
 	input_path='/home/imchugh/Ozflux/Sites/Whroo/Data/Processed/all/'
 	#input_path='/home/imchugh/Ozflux/Sites/Whroo/Data/Processed/2012/'
-	input_file='Whroo_2011_to_2014_L3_stor.nc'
+	input_file='Whroo_2011_to_2014_L4.nc'
 	output_path='/home/imchugh/Documents'
 
 # Naming convention in input file
@@ -24,7 +24,7 @@
 [options]
 	radiation_threshold='10'
 	nan_value='-9999'
-	num_bootstraps='1000'
+	num_bootstraps='10'
 	QC_accept_codes='[0,10]'
 	output_results='True'
-	output_plots='True'
+	output_plots='False'
