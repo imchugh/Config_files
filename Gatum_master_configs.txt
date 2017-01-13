@@ -34,7 +34,7 @@
     [[options]]
 	    step_size_days = 2
 	    window_size_days = 5
-	    minimum_pct_annual = 5
+	    minimum_pct_annual = 10
 	    minimum_pct_window = 20
         output_folder = Respiration
         output_fit_plots = False
@@ -49,7 +49,7 @@
         step_size_days = 2
 	    window_size_days = 5
 	    minimum_pct_window = 20
-        use_nocturnal_rb = False
+        use_nocturnal_rb = True
         output_folder = Light_response
         output_fit_plots = False
 [random_error_configs]
