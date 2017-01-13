@@ -6,7 +6,7 @@
 
 [global_configs]
     [[files]]
-        input_path = /home/imchugh/Documents/Gatum/EC_data/2015/
+        input_path = /home/ian/Documents/Gatum/EC_data/2015/
         input_file = GatumPasture_2015_L4.nc
         output_path = /home/imchugh/Documents
 
@@ -32,10 +32,17 @@
         solar_radiation = Fsd
         friction_velocity = ustar
     [[options]]
+<<<<<<< HEAD
 	    step_size_days = 2
 	    window_size_days = 5
 	    minimum_pct_annual = 10
 	    minimum_pct_window = 20
+=======
+	step_size_days = 2
+	window_size_days = 5
+	minimum_pct_annual = 5
+	minimum_pct_window = 20
+>>>>>>> 8cc79b263adaf113a193cee744b624ca0b70f47c
         output_folder = Respiration
         output_fit_plots = False
 [photosynthesis_configs]
@@ -47,9 +54,15 @@
         friction_velocity = ustar
     [[options]]    
         step_size_days = 2
+<<<<<<< HEAD
 	    window_size_days = 5
 	    minimum_pct_window = 20
         use_nocturnal_rb = True
+=======
+	window_size_days = 5
+	minimum_pct_window = 20
+        use_nocturnal_rb = False
+>>>>>>> 8cc79b263adaf113a193cee744b624ca0b70f47c
         output_folder = Light_response
         output_fit_plots = False
 [random_error_configs]
