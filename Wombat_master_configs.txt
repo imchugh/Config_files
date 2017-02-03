@@ -6,15 +6,15 @@
 
 [global_configs]
     [[files]]
-	#input_path='/home/imchugh/ownCloud/Shared/OzFlux/Sites/WombatStateForest/Data/Tower/site_pi/f_Ian/L3_noProfileSc_f_2012'
-    input_path='/home/imchugh/Downloads'
-	input_file='WombatStateForest_L3.nc'
+	input_path='/home/imchugh/ownCloud/Shared/OzFlux/Sites/WombatStateForest/Data/Tower/site_pi/f_Ian/L4_nostorage/'
+    #input_path='/home/imchugh/Downloads'
+	input_file='WombatStateForest_L4_nostorage.nc'
     output_path = /home/imchugh/Documents
 
     [[options]]
         noct_threshold = 5
-        use_storage = False
-        unify_flux_storage_cases = False
+        use_storage = True
+        unify_flux_storage_cases = True
 	    ustar_filter_day = False
         [[[ustar_threshold]]]
             2010 = 0.56
@@ -32,12 +32,12 @@
 [respiration_configs]
     [[variables]]
         carbon_flux = Fc
-        # carbon_storage = Fc_storage_obs
+        carbon_storage = Fc_storage
         temperature = Ta
         soil_moisture = Sws
         solar_radiation = Fsd
         friction_velocity = ustar
-        # generic = Fc_storage_obs
+        # generic = Fc_storage
     [[options]]
 	    step_size_days = 5
 	    window_size_days = 15
@@ -49,7 +49,7 @@
 [photosynthesis_configs]
     [[variables]]
         carbon_flux = Fc
-        # carbon_storage = Fc_storage_obs
+        carbon_storage = Fc_storage
         temperature = Ta
         solar_radiation = Fsd
         vapour_pressure_deficit = VPD
@@ -70,7 +70,7 @@
         temperature = Ta
         solar_radiation = Fsd
         friction_velocity = ustar
-        wind_speed = Ws_CSAT
+        wind_speed = Ws
     [[options]]
         pos_averaging_bins = 10
         neg_averaging_bins = 10
@@ -88,7 +88,7 @@
         temperature = Ta
         solar_radiation = Fsd
         friction_velocity = ustar
-        wind_speed = Ws_CSAT
+        wind_speed = Ws
     [[options]]
 
 [NEE_uncertainty_configs]
