@@ -15,7 +15,7 @@
         noct_threshold = 5
         use_storage = False
         unify_flux_storage_cases = False
-	ustar_filter_day = False
+	    ustar_filter_day = False
         [[[ustar_threshold]]]
             2010 = 0.56
             2011 = 0.69
